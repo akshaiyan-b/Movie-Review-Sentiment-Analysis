@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Movie Reviews Sentiment Analysis</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='food-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">MOVIE REVIEW SENTIMENT ANALYSIS</h2>
+            <div class='description'>
+    			<p>Let's see whether people reviewed yourmovie Good or Bad</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction=='positive' %}
+				<h1>Prediction: <span class='safe'>Good Job!!! Looks like people seem to enjoyed the Movie</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='pos.gif') }}" alt="Positive Review">
+			{% elif prediction=='negative' %}
+				<h1>Prediction: <span class='danger'>Oh Oh...!!!Looks like people don't seem to enjoy your Movie</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='neg.gif') }}" alt="Negative Review">
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/akshaiyan-b"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/akshaiyan-b-572555203/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made By Akshaiyan B</p>
+       </div>
+
+    </body>
+</html>
